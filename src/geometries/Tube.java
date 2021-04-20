@@ -8,10 +8,11 @@ package geometries;
 import primitives.Point3D;
 import primitives.*;
 
+import java.util.List;
 
-public class Tube {
+
+public class Tube extends RadialGeometry implements Geometry {
     protected Ray r;
-    protected double radius;
 
     /************ contractors **********/
     /**
@@ -20,7 +21,7 @@ public class Tube {
      * @param r the ray
      */
     public Tube(double radius, Ray r) {
-        this.radius=radius;
+        super(radius);
         this.r = r;
     }
     /*public Tube(){
@@ -42,6 +43,11 @@ public class Tube {
     public Vector getNormal(Point3D point) {
        return null;
 
+    }
+
+    @Override
+    public List<Point3D> findIntersections(Ray ray) {
+        return null;
     }
 }
 

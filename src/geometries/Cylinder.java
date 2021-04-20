@@ -20,9 +20,7 @@ public class Cylinder extends Tube {
     }
 
     /************getter***************/
-    public double getHieght() {
-        return hieght;
-    }
+    public double getHieght() { return hieght; }
     /***************to string*********/
     @Override
     public String toString() {

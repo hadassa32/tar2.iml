@@ -20,4 +20,16 @@ class Point3DTest {
         System.out.println("th first point is: " + p2);
 
     }
+   /* add Point3D to vector
+  return Point3D
+  */
+
+    @Test
+    void add() {
+        Vector p1 = new Vector(1, 2, 3);
+        Point3D result = new Point3D(2,3,4).add(p1);
+        assertEquals(new Point3D(3,5,7),result,"ERROR: Point - Point does not work correctly");
+
+    }
+
 }

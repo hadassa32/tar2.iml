@@ -37,7 +37,6 @@ class TubeTest {
         //Test simple Tube
         Ray r = new Ray(new Point3D(0, 1, 0), new Vector(0, 1, 0));
         Tube t1 = new Tube(4, r);
-
         assertEquals("not good normal", new Vector(1, 0, 0), t1.getNormal(new Point3D(4, 0, 0)));
 
         //another Test
@@ -45,7 +44,6 @@ class TubeTest {
         Tube t2 = new Tube(2, r1);
         assertEquals("", new Vector(0, 0, 1), t2.getNormal(new Point3D(2, 2, 2)));
         // =============== Boundary Values Tests ==================
-
         //Test point null
         try {
             t2.getNormal(null);

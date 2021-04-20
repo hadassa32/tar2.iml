@@ -1,8 +1,10 @@
 package primitives;
 
+import static primitives.Util.isZero;
+
 public class Ray {
     // Point of origin
-    private Point3D POO;
+     private Point3D POO;
 
     // Ray direction
     private Vector _direction;
@@ -40,4 +42,18 @@ public Ray(){}
         Ray ray = (Ray) o;
         return POO.equals(ray.POO) && _direction.equals(ray._direction);
     }
+
+    public Point3D getTargetPoint(double length) {
+        return isZero(length ) ? POO : new Point3D(POO._x, POO._y, POO._z).add(_direction.scale(length));
+    }
+    /*public Point3D getTargetPoint(double length) {
+        if (isZero(length)) {
+            return new Point3D(POO._x, POO._y, POO._z));
+        }
+
+        Vector targetVector = _direction.scale(length);
+
+        return POO.add(targetVector);
+    }*/
+
 }
